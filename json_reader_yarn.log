@@ -1,0 +1,80 @@
+19/12/27 16:08:53 WARN TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0, test-dn-0050, executor 1): org.json4s.package$MappingException: unknown error
+	at org.json4s.Extraction$.extract(Extraction.scala:46)
+	at org.json4s.ExtractableJsonAstNode.extract(ExtractableJsonAstNode.scala:21)
+	at org.awk.JsonReader$.convertToCaseClass(JsonReader.scala:16)
+	at org.awk.JsonReader$$anonfun$1.apply(JsonReader.scala:27)
+	at org.awk.JsonReader$$anonfun$1.apply(JsonReader.scala:27)
+	at scala.collection.Iterator$$anon$11.next(Iterator.scala:409)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:393)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:59)
+	at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:104)
+	at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:48)
+	at scala.collection.TraversableOnce$class.to(TraversableOnce.scala:310)
+	at scala.collection.AbstractIterator.to(Iterator.scala:1336)
+	at scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:302)
+	at scala.collection.AbstractIterator.toBuffer(Iterator.scala:1336)
+	at scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:289)
+	at scala.collection.AbstractIterator.toArray(Iterator.scala:1336)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$28.apply(RDD.scala:1358)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$28.apply(RDD.scala:1358)
+	at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2074)
+	at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2074)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:109)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:345)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at org.json4s.reflect.package$$anon$1.<init>(package.scala:74)
+	at org.json4s.Extraction$.extract(Extraction.scala:349)
+	at org.json4s.Extraction$.extract(Extraction.scala:42)
+	... 27 more
+
+19/12/27 16:08:53 INFO TaskSetManager: Starting task 0.1 in stage 0.0 (TID 1, test-dn-0050, executor 1, partition 0, RACK_LOCAL, 7908 bytes)
+19/12/27 16:08:53 INFO TaskSetManager: Lost task 0.1 in stage 0.0 (TID 1) on test-dn-0050, executor 1: org.json4s.package$MappingException (unknown error) [duplicate 1]
+19/12/27 16:08:53 INFO TaskSetManager: Starting task 0.2 in stage 0.0 (TID 2, test-dn-0050, executor 1, partition 0, RACK_LOCAL, 7908 bytes)
+19/12/27 16:08:53 INFO TaskSetManager: Lost task 0.2 in stage 0.0 (TID 2) on test-dn-0050, executor 1: org.json4s.package$MappingException (unknown error) [duplicate 2]
+19/12/27 16:08:53 INFO TaskSetManager: Starting task 0.3 in stage 0.0 (TID 3, test-dn-0050, executor 1, partition 0, RACK_LOCAL, 7908 bytes)
+19/12/27 16:08:53 INFO TaskSetManager: Lost task 0.3 in stage 0.0 (TID 3) on test-dn-0050, executor 1: org.json4s.package$MappingException (unknown error) [duplicate 3]
+19/12/27 16:08:53 ERROR TaskSetManager: Task 0 in stage 0.0 failed 4 times; aborting job
+19/12/27 16:08:53 INFO YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+19/12/27 16:08:53 INFO YarnScheduler: Cancelling stage 0
+19/12/27 16:08:53 INFO DAGScheduler: ResultStage 0 (take at JsonReader.scala:28) failed in 2.927 s due to Job aborted due to stage failure: Task 0 in stage 0.0 failed 4 times, most recent failure: Lost task 0.3 in stage 0.0 (TID 3, test-dn-0050, executor 1): org.json4s.package$MappingException: unknown error
+	at org.json4s.Extraction$.extract(Extraction.scala:46)
+	at org.json4s.ExtractableJsonAstNode.extract(ExtractableJsonAstNode.scala:21)
+	at org.awk.JsonReader$.convertToCaseClass(JsonReader.scala:16)
+	at org.awk.JsonReader$$anonfun$1.apply(JsonReader.scala:27)
+	at org.awk.JsonReader$$anonfun$1.apply(JsonReader.scala:27)
+	at scala.collection.Iterator$$anon$11.next(Iterator.scala:409)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:393)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:59)
+	at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:104)
+	at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:48)
+	at scala.collection.TraversableOnce$class.to(TraversableOnce.scala:310)
+	at scala.collection.AbstractIterator.to(Iterator.scala:1336)
+	at scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:302)
+	at scala.collection.AbstractIterator.toBuffer(Iterator.scala:1336)
+	at scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:289)
+	at scala.collection.AbstractIterator.toArray(Iterator.scala:1336)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$28.apply(RDD.scala:1358)
+	at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$28.apply(RDD.scala:1358)
+	at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2074)
+	at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2074)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:109)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:345)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at org.json4s.reflect.package$$anon$1.<init>(package.scala:74)
+	at org.json4s.Extraction$.extract(Extraction.scala:349)
+	at org.json4s.Extraction$.extract(Extraction.scala:42)
+	... 27 more
+
+
