@@ -4,8 +4,9 @@ import org.apache.spark.sql.SparkSession
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
 
+
 // класс для распарсенного JSON'а
-case class Wine (id: Int, country: String, points: Int, title: String, variety: String, winery: String)
+case class Wine (id: Int, country: String, points: Int, price: Option[BigDecimal], title: String, variety: String, winery: String)
 
 object JsonReader extends App{
 
